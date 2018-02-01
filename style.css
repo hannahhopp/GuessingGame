@@ -20,12 +20,31 @@
 
 #input-parent {
     width: 160px;
-    margin: 10px auto; /* top, right, bottom, left */
+    margin: auto; /* top, right, bottom, left */
     /* padding: 25px; */
 }
 
 #player-input {
-    margin: 10px auto;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: black;
+    border-width: medium;
+    box-shadow: 5px 10px;
+    padding: auto auto;
+}
+
+#submit {
+    position: relative;
+    left: 50px;
+    bottom: 60px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    box-shadow: 5px 10px black;
+    font-size: 30px;
+    font-style: bold;
 }
 
 #footer #signature {
@@ -39,7 +58,7 @@
     box-shadow: 5px 10px;
     background-color: white;
     border-style: solid;
-    border-radius: 5px;
+    border-radius: 10px;
     border-color: black;
 }
 
