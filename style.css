@@ -1,19 +1,37 @@
 .center {
     text-align: center;
   }
-  ul {
-      list-style: none;
-      padding: 0;
-  }
-  img {
-      display: inline;
-      width: 200px;
-      height: 100px;
-  }
-  #footer {
-      width: 100%;
-      border-top: solid 2px black;
-      background-color: white;
-      position: fixed;
-      bottom: 0;
-  }
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+img {
+    display: inline;
+    /* width: 200px;
+    height: 100px; */
+    margin: auto 0;
+}
+
+#footer {
+    width: 100%;
+    border-top: solid 2px black;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+#input-parent {
+    width: 160px;
+    margin: 0 auto; /* top, right, bottom, left */
+}
+
+
+#submit {
+    margin: 10px;
+}
+
+#footer #signature {
+    margin: auto 0;
+}
