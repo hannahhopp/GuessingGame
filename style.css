@@ -1,10 +1,51 @@
 #app {
-    margin: auto;
+    background-color: dimgray;
+}
+
+#headers {
+    color: white;
+    padding: 25px;
+}
+
+#menu-btns {
+    padding: 25px;
+}
+
+#footer {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+#input-parent {
+    width: 160px;
+    margin: 10px auto; /* top, right, bottom, left */
+    /* padding: 25px; */
+}
+
+#player-input {
+    margin: 10px auto;
+}
+
+#footer #signature {
+    margin: auto 0;
+}
+
+#guesses .guess {
+    display: inline;
+    font-size: 50px;
+    padding: 0 25px;
+    box-shadow: 5px 10px;
+    background-color: white;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: black;
 }
 
 .center {
     text-align: center;
-  }
+}
 
 ul {
     list-style: none;
@@ -17,23 +58,3 @@ img {
     vertical-align: middle;
 }
 
-#footer {
-    width: 100%;
-    background-color: white;
-    position: fixed;
-    bottom: 0;
-}
-
-#input-parent {
-    width: 160px;
-    margin: 0 auto; /* top, right, bottom, left */
-}
-
-
-#submit {
-    margin: 10px;
-}
-
-#footer #signature {
-    margin: auto 0;
-}
