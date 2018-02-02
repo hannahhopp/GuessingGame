@@ -1,21 +1,18 @@
+body {
+    background-color: black;
+}
+
 #app {
     background-color: dimgray;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: transparent;
 }
 
 #headers {
     color: white;
     padding: 25px;
-}
-
-#menu-btns {
-    padding: 25px;
-}
-
-#footer {
-    width: 100%;
-    background-color: white;
-    position: fixed;
-    bottom: 0;
+    text-shadow: 2px 2px black;
 }
 
 #input-parent {
@@ -32,7 +29,9 @@
     border-color: black;
     border-width: medium;
     box-shadow: 5px 10px;
-    padding: auto auto;
+    padding: 0 auto;
+    font-size: 60px;
+    text-align: center;
 }
 
 #submit {
@@ -47,8 +46,8 @@
     font-style: bold;
 }
 
-#footer #signature {
-    margin: auto 0;
+#submit:hover {
+    background-color: #ff9900;
 }
 
 #guesses .guess {
@@ -62,6 +61,28 @@
     border-color: black;
 }
 
+#menu-btns {
+    padding: 25px;
+}
+
+#footer {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+#footer #signature {
+    margin: auto 0;
+    font-variant: small-caps;
+}
+
+#footer #github {
+    width: auto;
+    max-width: 8%;
+    height: auto;
+}
+
 .center {
     text-align: center;
 }
@@ -72,8 +93,8 @@ ul {
 }
 
 img {
-    width: 70%;
-    height: 70%;
     vertical-align: middle;
+    width: 70%;
+    height: auto;
 }
 
