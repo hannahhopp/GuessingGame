@@ -1,9 +1,15 @@
-body {
+#webpage {
     background-color: black;
 }
 
+#spacer {
+    padding: 25px;
+    margin: 25px auto;
+    background-color: transparent;
+}
+
 #app {
-    background-color: dimgray;
+    background-color: #1d1d41;
     border-style: solid;
     border-radius: 10px;
     border-color: transparent;
@@ -12,7 +18,7 @@ body {
 #headers {
     color: white;
     padding: 25px;
-    text-shadow: 2px 2px black;
+    text-shadow: 5px 5px 20px black;
 }
 
 #input-parent {
@@ -28,7 +34,7 @@ body {
     border-style: solid;
     border-color: black;
     border-width: medium;
-    box-shadow: 5px 10px;
+    box-shadow: 5px 10px 20px black;
     padding: 0 auto;
     font-size: 60px;
     text-align: center;
@@ -41,20 +47,16 @@ body {
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    box-shadow: 5px 10px black;
+    box-shadow: 5px 10px 20px black;
     font-size: 30px;
     font-style: bold;
-}
-
-#submit:hover {
-    background-color: #ff9900;
 }
 
 #guesses .guess {
     display: inline;
     font-size: 50px;
     padding: 0 25px;
-    box-shadow: 5px 10px;
+    box-shadow: 5px 10px 20px black;
     background-color: white;
     border-style: solid;
     border-radius: 10px;
@@ -63,6 +65,7 @@ body {
 
 #menu-btns {
     padding: 25px;
+    margin: 0px 10px;
 }
 
 #footer {
@@ -73,8 +76,12 @@ body {
 }
 
 #footer #signature {
-    margin: auto 0;
+    margin: auto;
     font-variant: small-caps;
+}
+
+#footer #gh-logo {
+    margin: auto;
 }
 
 #footer #github {
@@ -93,8 +100,7 @@ ul {
 }
 
 img {
-    vertical-align: middle;
+    margin: auto;
     width: 70%;
-    height: auto;
 }
 
