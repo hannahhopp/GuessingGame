@@ -44,7 +44,7 @@ Game.prototype.playersGuessSubmission = function (guess) {
 
 Game.prototype.checkGuess = function () {
     var diff = this.difference();
-    console.log(this.winningNumber, $('#submit').prop('disabled'));
+    console.log(this.winningNumber);
     if (this.pastGuesses.includes(this.playersGuess)) return 'You have already guessed that number.';
     else {
         this.pastGuesses.push(this.playersGuess);
@@ -55,7 +55,7 @@ Game.prototype.checkGuess = function () {
             $('#submit, #hint-button').prop('disabled', true);
             return 'You Win!';
         } else if (this.pastGuesses.length === 5) {
-            $('#subtitle').text('The winning number was ' + this.winningNumber + '. Press reset to play again!');
+            $('#subtitle').text('Press reset to play again!');
             $('#submit, #hint-button').prop('disabled', true);
             return 'You Lose.';
         } else {
@@ -97,6 +97,9 @@ function submit (game) {
 
 $(document).ready(function () {
     var game = new Game();
+    var titleClone = $('#title').clone();
+    var subtitleClone = $('#subtitle').clone();
+    var guessListClone = $('#guess-list').clone();
 
     $('#submit').on('click', function () {
         submit(game);
@@ -104,5 +107,19 @@ $(document).ready(function () {
 
     $('#player-input').keypress(function (key) {
         if (key.which === 13 && !$('#submit').prop('disabled')) submit(game);
+    });
+
+    $('#reset-button').on('click', function () {
+        $('#title').replaceWith(titleClone.clone());
+        $('#subtitle').replaceWith(subtitleClone.clone());
+        $('#guess-list').replaceWith(guessListClone.clone());
+        $('#submit, #hint-button').prop('disabled', false);
+        game = newGame();
+    });
+
+    $('#hint-button').on('click', function () {
+        var hintArr = game.provideHint();
+        var hint = 'The winning number is ' + hintArr[0] + ', ' + hintArr[1] + ' or ' + hintArr[2] + '.';
+        $('#title').text(hint);
     });
 });
