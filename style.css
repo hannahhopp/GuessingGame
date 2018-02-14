@@ -9,9 +9,12 @@
 }
 
 #app {
-    background-color: #1d1d41;
+    background-image: url("assets/purple.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
     border-style: solid;
-    border-radius: 10px;
+    border-radius: 20px;
     border-color: transparent;
 }
 
