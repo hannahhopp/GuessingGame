@@ -61,6 +61,7 @@
     border-style: solid;
     border-radius: 10px;
     border-color: black;
+    white-space: pre-wrap;
 }
 
 #menu-btns {
