@@ -44,38 +44,37 @@ Game.prototype.playersGuessSubmission = function (guess) {
 
 Game.prototype.checkGuess = function () {
     var diff = this.difference();
-    var guess = this.playersGuess;
-    var win = this.winningNumber;
-    if (this.pastGuesses.includes(guess)) $('#title').text("You have already guessed that number.");
+    console.log(this.winningNumber, $('#submit').prop('disabled'));
+    if (this.pastGuesses.includes(this.playersGuess)) return 'You have already guessed that number.';
     else {
-        this.pastGuesses.push(guess);
-        var i = this.pastGuesses.length - 1;
-        $('#guesses').find('li').each(function (index) {
-            if (index === i) $(this).text(guess);
-        }); 
-        var lowerOrHigherMessage = this.isLower() ? 'Guess higher!' : 'Guess lower!';
-        $('#subtitle').text(lowerOrHigherMessage);
-        switch (true) {
-            case (guess === win):
-                $('#title').text("You Win!");
-                $('#subtitle').text('Press reset to play again!');
-                break;
-            case (this.pastGuesses.length === 5):
-                $('#title').text("You Lose.");
-                $('#subtitle').text(`The winning number was ${win}. Press reset to play again!`);
-                break;
-            case (diff < 10):
-                $('#title').text("You're burning up!");
-                break;
-            case (diff < 25):
-                $('#title').text("You're lukewarm.");
-                break;
-            case (diff < 50):
-                $('#title').text("You're a bit chilly.");
-                break;
-            default:
-                $('#title').text("You're ice cold!");
-                break;
+        this.pastGuesses.push(this.playersGuess);
+        $('#guess-list li:nth-child(' + this.pastGuesses.length + ')').text(this.playersGuess);
+
+        if (this.playersGuess === this.winningNumber) {
+            $('#subtitle').text('Press reset to play again!');
+            $('#submit, #hint-button').prop('disabled', true);
+            return 'You Win!';
+        } else if (this.pastGuesses.length === 5) {
+            $('#subtitle').text('The winning number was ' + this.winningNumber + '. Press reset to play again!');
+            $('#submit, #hint-button').prop('disabled', true);
+            return 'You Lose.';
+        } else {
+            var lowerOrHigherMessage = this.isLower() ? 'Guess higher!' : 'Guess lower!';
+            $('#subtitle').text(lowerOrHigherMessage);
+            switch (true) {
+                case (diff < 10):
+                    return 'You\'re burning up!';
+                    break;
+                case (diff < 25):
+                    return 'You\'re lukewarm.';
+                    break;
+                case (diff < 50):
+                    return 'You\'re a bit chilly.';
+                    break;
+                default:
+                    return 'You\'re ice cold!';
+                    break;
+            }
         }
     }
 }
@@ -92,7 +91,8 @@ Game.prototype.provideHint = function () {
 function submit (game) {
     var guess = $('#player-input').val();
     $('#player-input').val('');
-    return game.playersGuessSubmission(parseInt(guess, 10));
+    var output = game.playersGuessSubmission(parseInt(guess, 10));
+    $('#title').text(output);
 }
 
 $(document).ready(function () {
@@ -103,6 +103,6 @@ $(document).ready(function () {
     });
 
     $('#player-input').keypress(function (key) {
-        if (key.which === 13) submit(game);
+        if (key.which === 13 && !$('#submit').prop('disabled')) submit(game);
     });
 });
