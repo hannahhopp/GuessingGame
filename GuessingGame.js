@@ -44,7 +44,6 @@ Game.prototype.playersGuessSubmission = function (guess) {
 
 Game.prototype.checkGuess = function () {
     var diff = this.difference();
-    console.log(this.winningNumber);
     if (this.pastGuesses.includes(this.playersGuess)) return 'You have already guessed that number.';
     else {
         this.pastGuesses.push(this.playersGuess);
