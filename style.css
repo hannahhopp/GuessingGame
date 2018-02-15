@@ -2,9 +2,23 @@
     background-color: black;
 }
 
+@font-face {
+    font-family: "punk";
+    src: url("assets/punk kid.ttf"),
+    url("assets/punk_kid-webfont.woff"),
+    url("assets/punk_kid-webfont.woff2");
+}
+
+@font-face {
+    font-family: "punkboy";
+    src: url("assets/punkboy_tbs.ttf"),
+    url("assets/punkboy_tbs-webfont.woff"),
+    url("assets/punkboy_tbs-webfont.woff2");
+}
+
 #spacer {
-    padding: 25px;
-    margin: 25px auto;
+    /* padding: 25px; */
+    margin: 50px auto;
     background-color: transparent;
 }
 
@@ -12,7 +26,6 @@
     background-image: url("assets/purple.png");
     background-size: cover;
     background-repeat: no-repeat;
-    /* background-position: center; */
     border-style: solid;
     border-radius: 20px;
     border-color: transparent;
@@ -21,13 +34,21 @@
 #headers {
     color: white;
     padding: 25px;
-    text-shadow: 5px 5px 20px black;
+}
+
+#title {
+    font-family: "punk";
+    font-size: 100px;
+}
+
+#subtitle {
+    font-family: "punkboy";
+    font-size: 45px;
 }
 
 #input-parent {
     width: 160px;
-    margin: auto; /* top, right, bottom, left */
-    /* padding: 25px; */
+    margin: 0px auto;
 }
 
 #player-input {
@@ -37,8 +58,8 @@
     border-style: solid;
     border-color: black;
     border-width: medium;
-    box-shadow: 5px 10px 20px black;
     padding: 0 auto;
+    font-family: "punkboy";
     font-size: 60px;
     text-align: center;
 }
@@ -50,16 +71,15 @@
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    box-shadow: 5px 10px 20px black;
     font-size: 30px;
-    font-style: bold;
+    font-family: "punkboy";
 }
 
 #guesses .guess {
     display: inline;
+    font-family: "punkboy";
     font-size: 50px;
     padding: 0 25px;
-    box-shadow: 5px 10px 20px black;
     background-color: white;
     border-style: solid;
     border-radius: 10px;
@@ -68,8 +88,20 @@
 }
 
 #menu-btns {
-    padding: 25px;
-    margin: 0px 10px;
+    margin: 15px;
+    font-family: "punkboy";
+}
+
+#reset-button {
+    height: 50px;
+    width: 200px;
+    font-size: 30px;
+}
+
+#hint-button {
+    height: 50px;
+    width: 150px;
+    font-size: 30px;
 }
 
 #footer {
