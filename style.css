@@ -46,6 +46,11 @@
     font-size: 45px;
 }
 
+#hint {
+    font-family: "punkboy";
+    font-size: 35px;
+}
+
 #input-parent {
     width: 160px;
     margin: 0px auto;

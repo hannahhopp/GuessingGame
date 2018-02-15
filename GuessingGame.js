@@ -50,16 +50,16 @@ Game.prototype.checkGuess = function () {
         $('#guess-list li:nth-child(' + this.pastGuesses.length + ')').text(this.playersGuess);
 
         if (this.playersGuess === this.winningNumber) {
-            $('#subtitle').text('Press reset to play again!');
+            $('#hint').text('Press reset to play again!');
             $('#submit, #hint-button').prop('disabled', true);
             return 'You Win!';
         } else if (this.pastGuesses.length === 5) {
-            $('#subtitle').text('Press reset to play again!');
+            $('#hint').text('Press reset to play again!');
             $('#submit, #hint-button').prop('disabled', true);
             return 'You Lose.';
         } else {
             var lowerOrHigherMessage = this.isLower() ? 'Guess higher!' : 'Guess lower!';
-            $('#subtitle').text(lowerOrHigherMessage);
+            $('#hint').text(lowerOrHigherMessage);
             switch (true) {
                 case (diff < 10):
                     return 'You\'re burning up!';
@@ -91,13 +91,13 @@ function submit (game) {
     var guess = $('#player-input').val();
     $('#player-input').val('');
     var output = game.playersGuessSubmission(parseInt(guess, 10));
-    $('#title').text(output);
+    $('#subtitle').text(output);
 }
 
 $(document).ready(function () {
     var game = new Game();
-    var titleClone = $('#title').clone();
     var subtitleClone = $('#subtitle').clone();
+    var hintClone = $('#hint').clone();
     var guessListClone = $('#guess-list').clone();
 
     $('#submit').on('click', function () {
@@ -109,8 +109,8 @@ $(document).ready(function () {
     });
 
     $('#reset-button').on('click', function () {
-        $('#title').replaceWith(titleClone.clone());
         $('#subtitle').replaceWith(subtitleClone.clone());
+        $('#hint').replaceWith(hintClone.clone());
         $('#guess-list').replaceWith(guessListClone.clone());
         $('#submit, #hint-button').prop('disabled', false);
         game = newGame();
@@ -119,6 +119,6 @@ $(document).ready(function () {
     $('#hint-button').on('click', function () {
         var hintArr = game.provideHint();
         var hint = 'The winning number is ' + hintArr[0] + ', ' + hintArr[1] + ' or ' + hintArr[2] + '.';
-        $('#title').text(hint);
+        $('#hint').text(hint);
     });
 });
